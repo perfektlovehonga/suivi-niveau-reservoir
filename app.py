@@ -6,10 +6,10 @@ import os  # Permet d'interagir avec le système et l'environnement
 app = Flask(__name__)
 
 # Python va chercher la valeur de 'HIVEMQ_HOST' définie sur Render
-MQTT_HOST = os.getenv("BROKER")
-MQTT_PORT = int(os.getenv("PORT", 8883))
-MQTT_USER = os.getenv("USERNAME")
-MQTT_PASSWORD = os.getenv("PASSWORD")
+BROKER = os.getenv("BROKER")
+PORT = int(os.getenv("PORT", 8883))
+USER = os.getenv("USERNAME")
+PASSWORD = os.getenv("PASSWORD")
 
 
 @app.route("/niveau")
