@@ -12,7 +12,7 @@ USER = os.getenv("USERNAME")
 PASSWORD = os.getenv("PASSWORD")
 
 
-@app.route("/niveau, methods=["POST"])
+@app.route("/niveau", methods=["POST"])
 def recevoir_niveau():
 
     niveau = request.args.get("niveau")
