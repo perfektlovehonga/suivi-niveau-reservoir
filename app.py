@@ -6,6 +6,10 @@ import os
 app = Flask(__name__)
 
 # Récupération des variables d'environnement sur Render
+BROKER ="https://indigonomad-edf9e30e.a01.euc1.aws.hivemq.cloud"
+PORT = 8883
+USER = "perfekt"
+PASSWORD = "perfektlove"
 BROKER = os.getenv("BROKER")
 PORT = int(os.getenv("PORT", 8883))
 USER = os.getenv("USERNAME")
