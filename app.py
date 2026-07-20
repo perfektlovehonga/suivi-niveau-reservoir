@@ -1,13 +1,15 @@
 from flask import Flask, request
 import paho.mqtt.client as mqtt
 import ssl
+import os  # Permet d'interagir avec le système et l'environnement
 
 app = Flask(__name__)
 
-BROKER = "TON_CLUSTER.hivemq.cloud"
-PORT = 8883
-USERNAME = "TON_UTILISATEUR"
-PASSWORD = "TON_MOT_DE_PASSE"
+# Python va chercher la valeur de 'HIVEMQ_HOST' définie sur Render
+MQTT_HOST = os.getenv("BROKER")
+MQTT_PORT = int(os.getenv("PORT", 8883))
+MQTT_USER = os.getenv("USERNAME")
+MQTT_PASSWORD = os.getenv("PASSWORD")
 
 
 @app.route("/niveau")
